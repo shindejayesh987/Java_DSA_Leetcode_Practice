@@ -1,0 +1,26 @@
+class Main {
+  public static void main(String[] args) {
+    int[] nums = {21,65,9,86,5,32,4,58};
+    int target = 21;
+    int ans = LinearSearch(nums , target);
+
+
+    System.out.println(ans);
+   
+  }
+
+  static int LinearSearch(int[] arr , int target){
+    if(arr.length == 0 ){
+      System.out.print("Item not found!!!!");
+    }
+
+    for(int index = 0; index < arr.length ; index++){
+      int element = arr[index];
+      if(element == target){
+      return index;
+      }
+
+    }
+    return -1;
+  }
+}
