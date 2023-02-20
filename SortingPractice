@@ -1,0 +1,79 @@
+import java.util.Arrays;
+
+class Main {
+  public static void main(String[] args) {
+
+    int[] arr2 = {1,6,7,3,9,4};
+    bubblesort(arr);
+    Cyclesort(arr);
+    InsertionSort(arr);
+    selectionsort(arr2);
+    System.out.println(Arrays.toString(arr2));
+  }
+
+  static void selectionsort(int[] arr){
+     for(int i = 0 ;i< arr.length ; i++){
+      int last = arr.length - i - 1;
+      int maxIndex = getmaxIndex(arr, 0 ,last);
+      swap(arr, maxIndex, last);
+    }
+  }
+  static int getmaxIndex(int [] arr, int start , int end){
+    int max = start ;
+    for(int i = start; i <= end ; i++){
+      if(arr[max] < arr[i]){
+        max = i;
+      }
+    }
+    return max;
+  }
+
+   static void InsertionSort(int[] arr){
+
+     for(int i = 0 ; i< arr.length ; i ++ ){
+       for(int j = i+1; j >0 ;j--){
+         if(arr[j]< arr[j-1]){
+          swap(arr,j,j-1);
+        }
+        else{
+          break;
+        }
+      }
+    }
+    
+  }
+
+  static void Cyclesort(int[]arr){
+
+    int i = 0;
+    while(i < arr.length){
+      int correct = arr[i] - 1;
+      if(arr[i] != arr[correct]){
+        swap(arr,i , correct);
+      }
+      else{
+        i++;
+      }
+    }
+  }
+
+  static void swap(int[] arr, int one , int two){
+
+    int temp = arr[one];
+    arr[one] = arr[two];
+    arr[two] = temp;
+  }
+
+  static void bubblesort(int[] arr){
+
+  for(int i = 0; i < arr.length ;i++){
+    for(int j = 1 ; j < arr.length -1 ; j ++){
+      if(arr[j] < arr[j-1]){
+        int temp = arr[j];
+        arr[j] = arr[j-1];
+        arr[j-1] = temp;
+      }
+    }
+  }
+    
+}
