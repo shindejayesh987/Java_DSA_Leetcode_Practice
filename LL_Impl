@@ -1,0 +1,22 @@
+public class LLImpl {
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertFirst(12);
+        ll.insertFirst(13);
+        ll.insertFirst(14);
+        ll.insertFirst(15);
+        ll.insertlast(98);
+        ll.insertlast(99);
+        ll.display();
+        ll.insert(55,4);
+        ll.display();
+        ll.deletefirst();
+        ll.display();
+        ll.deletelast();
+        ll.display();
+        ll.delete(3);
+        ll.display();
+
+
+    }
+}
