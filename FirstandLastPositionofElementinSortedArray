@@ -1,0 +1,41 @@
+public class FirstandLastPosiofEleInSortedArray {
+    public static void main(String[] args) {
+        int[] arr = {5,7,7,8,8,10};
+        int target = 9;
+        searchRange(arr,target);
+
+    }
+
+    static int[] searchRange(int[] arr,int target){
+        int start = 0;
+        int end = arr.length-1;
+
+        while(start < end){
+            int mid = start + (end - start)/2;
+            if (arr[mid] < target){
+                start = mid +1;
+            }
+            else {
+                end =mid;
+            }
+        }
+
+        int first = start;
+        if (start < arr.length && arr[start] == target){
+            start =0;
+            end = arr.length-1;
+            while(start < end ){
+                int mid = start + (end - start )/2;
+                if (arr[mid]> target){
+                    end =mid-1;
+                }
+                else {
+                    start = mid;
+                }
+            }
+            return new int[]{first,end};
+        }
+        return new int[]{-1,-1};
+    }
+
+}
