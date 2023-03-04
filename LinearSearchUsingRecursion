@@ -1,9 +1,15 @@
+import java.util.ArrayList;
+
 public class LinearSearchUsingRecursion {
     public static void main(String[] args) {
-        int [] arr = {2,3,1,4,5,9};
-        System.out.println(find(arr,5,0));
-        System.out.println(findindex(arr,5,0));
-        System.out.println(findindexlast(arr,5, arr.length-1));
+        int [] arr = {2,3,1,4,4,5,9};
+//        System.out.println(find(arr,5,0));
+//        System.out.println(findindex(arr,5,0));
+//        System.out.println(findindexlast(arr,5, arr.length-1));
+//        findallindexes(arr,4,0);
+//        System.out.println(list);
+        ArrayList<Integer> ans = findallindexes(arr,4,0,new ArrayList<>());
+        System.out.println(ans);
 
     }
 
@@ -36,6 +42,31 @@ public class LinearSearchUsingRecursion {
         } else {
             return findindexlast(arr, target, index - 1);
         }
+
+    }
+    static ArrayList<Integer> list =new ArrayList<>();
+    public static void findallindexes(int[] arr, int target,int index) {
+        if (index == -1) {
+            return;
+        }
+        if (arr[index] == target) {
+            list.add(index);
+        }
+        findallindexes(arr, target, index + 1);
+
+
+    }
+
+    static ArrayList<Integer> findallindexes(int[] arr, int target,int index, ArrayList<Integer> list){
+        if(index == arr.length){
+            return list;
+        }
+
+        if(arr[index] ==target){
+            list.add(index);
+        }
+        return findallindexes(arr, target, index + 1,list);
+
 
     }
 }
