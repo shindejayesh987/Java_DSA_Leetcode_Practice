@@ -10,6 +10,8 @@ public class LinearSearchUsingRecursion {
 //        System.out.println(list);
         ArrayList<Integer> ans = findallindexes(arr,4,0,new ArrayList<>());
         System.out.println(ans);
+        System.out.println(findallindexes2(arr,4,0));
+        
 
     }
 
@@ -66,6 +68,24 @@ public class LinearSearchUsingRecursion {
             list.add(index);
         }
         return findallindexes(arr, target, index + 1,list);
+
+
+    }
+    static ArrayList<Integer> findallindexes2(int[] arr, int target,int index){
+
+        ArrayList<Integer> list =new ArrayList<>();
+
+        if(index == arr.length){
+            return list;
+        }
+
+        if(arr[index] ==target){
+            list.add(index);
+        }
+        ArrayList<Integer> ansfrombelowcalls = findallindexes2(arr, target, index + 1);
+
+        list.addAll(ansfrombelowcalls);
+        return list;
 
 
     }
