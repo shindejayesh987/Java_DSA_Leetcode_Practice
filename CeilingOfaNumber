@@ -1,7 +1,9 @@
 class Main {
   public static void main(String[] args) {
+  
     int[] arr = {12,35,68,78,98,99};
     int target = 65;
+    
     int ans = ceiling(arr,target);
     System.out.println(ans);
     
