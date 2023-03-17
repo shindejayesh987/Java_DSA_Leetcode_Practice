@@ -16,6 +16,6 @@ public static void main(String[] args){
 Solution sln = new Solution();
 int[] numArray = {3,2,4};
 int sum = 6;
-sln.twoSum(numArray, sum);
+sln.twoSum(numArray,sum);
 }
 }
