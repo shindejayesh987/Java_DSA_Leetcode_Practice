@@ -3,6 +3,7 @@ public class RecursionMultiply1toN {
         int ans = fact(5);
         int as = sum(5);
         System.out.println(as);
+        
         System.out.println(ans);
 
     }
